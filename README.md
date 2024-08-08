@@ -1,5 +1,6 @@
 Pascal's Triangle
-Overview
+
+
 This Python script implements a function to generate Pascal's triangle up to a specified number of rows. Pascal's triangle is a triangular array of binomial coefficients, where each number is the sum of the two numbers directly above it.
 
 Implementation
