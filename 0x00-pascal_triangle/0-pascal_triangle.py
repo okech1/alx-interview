@@ -1,22 +1,24 @@
 #!/usr/bin/python3
-""" 0-pascal_triangle """
+"""
+0-pascal_triangle
+"""
+
 
 def pascal_triangle(n):
-if n <= 0:
-return []
-
-triangle = [[1]]  
-""" Start with the first row of the triangle """
-
-for i in range(1, n):
-prev_row = triangle[-1]
-""" Start the new row with """
-row = [1]
-"""Compute the in-between elements"""
-for j in range(1, i):
-row.append(prev_row[j - 1] + prev_row[j])
-"""End the row with 1"""
-row.append(1)
-triangle.append(row)
-
-return triangle
+    """
+    Returns a list of integers
+    representing the Pascal Triangle of n
+    returns empty list if n <= 0
+    """
+    k = []
+    if n <= 0:
+        return k
+    k = [[1]]
+    for i in range(1, n):
+        temp = [1]
+        for j in range(len(k[i - 1]) - 1):
+            curr = k[i - 1]
+            temp.append(k[i - 1][j] + k[i - 1][j + 1])
+        temp.append(1)
+        k.append(temp)
+    return k
